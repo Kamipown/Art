@@ -1,0 +1,48 @@
+{
+  "en": {
+    "currency": {
+      "style": "currency",
+      "currency": "USD",
+      "notation": "standard"
+    },
+    "currencyShort": {
+      "style": "currency",
+      "currency": "USD",
+      "notation": "standard",
+      "minimumFractionDigits": 0,
+      "maximumFractionDigits": 0
+    },
+    "decimal": {
+      "style": "decimal",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "percent": {
+      "style": "percent",
+      "useGrouping": false
+    }
+  },
+  "fr": {
+    "currency": {
+      "style": "currency",
+      "currency": "EUR",
+      "notation": "standard"
+    },
+    "currencyShort": {
+      "style": "currency",
+      "currency": "EUR",
+      "notation": "standard",
+      "minimumFractionDigits": 0,
+      "maximumFractionDigits": 0
+    },
+    "decimal": {
+      "style": "decimal",
+      "minimumFractionDigits": 2,
+      "maximumFractionDigits": 2
+    },
+    "percent": {
+      "style": "percent",
+      "useGrouping": false
+    }
+  }
+}
