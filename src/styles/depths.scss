@@ -1,0 +1,12 @@
+$depthsMap: (
+  modal: 1,
+  loader: 2
+);
+
+@function getDepth($key) {
+  @return map-get($depthsMap, $key);
+}
+
+@mixin depth($key, $n: 0) {
+  z-index: getDepth($key) + $n;
+}
