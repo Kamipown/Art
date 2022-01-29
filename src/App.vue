@@ -1,19 +1,22 @@
 <template>
-  <div class="app" :class="{ blurred: isBlurred }">
-    <Header />
-    <RouterView />
-    <AdminDetector v-if="!isAdmin" />
-    <AppLoader />
-  </div>
+  <AppLoader v-if="isLoading" />
+  <template v-else>
+    <div class="app" :class="{ blurred: isBlurred }">
+      <Header />
+      <MonthSelector />
+      <RouterView />
+    </div>
+    <Viewer v-if="route.query.id" />
+  </template>
 </template>
 
 <script setup>
-import { AdminDetector, AppLoader, Header } from '@/containers'
-import { onMounted } from 'vue'
+import { AppLoader, Header, MonthSelector, Viewer } from '@/containers'
 
 const store = useStore()
+const route = useRoute()
 
-const isAdmin = computed(() => store.getters['isAdmin'])
+const isLoading = computed(() => store.getters['isLoading'])
 const isBlurred = computed(() => store.getters['isBlurred'])
 
 onMounted(() => store.dispatch('load'))
@@ -47,22 +50,28 @@ onMounted(() => store.dispatch('load'))
 }
 
 .app {
+  display: flex;
+  flex-direction: column;
   position: relative;
   height: 100%;
-  overflow: hidden;
-  transition: filter 200ms ease-in-out;
+  overflow: auto;
+  & {
+    scrollbar-width: none;
+    scrollbar-color: $dark9 $dark7;
+  }
+  &::-webkit-scrollbar {
+    width: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    border: 2px solid $dark7;
+    background: $dark7;
+  }
+  &::-webkit-scrollbar-thumb {
+    border: 2px solid $dark7;
+    background-color: $dark9;
+  }
   &.blurred {
     filter: blur(10px);
-  }
-  .fade-enter-active {
-    transition: opacity 200ms ease 200ms;
-  }
-  .fade-leave-active {
-    transition: opacity 200ms ease;
-  }
-  .fade-enter-from,
-  .fade-leave-to {
-    opacity: 0;
   }
 }
 </style>

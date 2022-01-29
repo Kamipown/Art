@@ -1,6 +1,7 @@
 $depthsMap: (
-  modal: 1,
-  loader: 2
+  toolbar: 1,
+  modal: 2,
+  loader: 3
 );
 
 @function getDepth($key) {

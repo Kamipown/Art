@@ -1,5 +1,5 @@
 <template>
-  <svg width="102" height="32" viewBox="0 0 102 32">
+  <svg viewBox="0 0 102 32">
     <g class="art">
       <path
         class="a"

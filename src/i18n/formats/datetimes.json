@@ -9,9 +9,7 @@
       "year": "numeric",
       "month": "long",
       "day": "numeric",
-      "weekday": "long",
-      "hour": "numeric",
-      "minute": "numeric"
+      "weekday": "long"
     },
     "monthYear": {
       "year": "numeric",
@@ -28,9 +26,7 @@
       "year": "numeric",
       "month": "long",
       "day": "numeric",
-      "weekday": "long",
-      "hour": "numeric",
-      "minute": "numeric"
+      "weekday": "long"
     },
     "monthYear": {
       "year": "numeric",

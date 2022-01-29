@@ -4,11 +4,7 @@ import {
 } from 'vue-router'
 
 import {
-  Admin,
-  Gallery,
-  Projects,
-  Sessions,
-  Statistics,
+  Gallery
 } from '@/pages'
 
 const router = createRouter({
@@ -16,28 +12,8 @@ const router = createRouter({
   routes: [
     {
       name: 'gallery',
-      path: '/',
+      path: '/:date?',
       component: Gallery
-    },
-    {
-      name: 'projects',
-      path: '/projects',
-      component: Projects
-    },
-    {
-      name: 'sessions',
-      path: '/sessions',
-      component: Sessions
-    },
-    {
-      name: 'statistics',
-      path: '/statistics',
-      component: Statistics
-    },
-    {
-      name: 'admin',
-      path: '/admin',
-      component: Admin
     }
   ]
 })

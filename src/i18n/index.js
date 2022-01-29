@@ -8,13 +8,7 @@ const availableLocales = ['en', 'fr']
 
 const getLocale = () => {
   const locale = (localStorage.getItem('lang') || navigator.language || navigator.userLanguage || defaultLanguage).substring(0, 2)
-  if (availableLocales.includes(locale)) {
-    localStorage.setItem('lang', locale)
-    return locale
-  }
-  else {
-    return defaultLocale
-  }
+  return availableLocales.includes(locale) ? locale : defaultLocale
 }
 
 const loadLocaleMessages = () => {

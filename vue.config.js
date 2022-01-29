@@ -35,17 +35,6 @@ module.exports = {
       }
     }
   },
-  devServer: {
-    hot: true,
-    liveReload: true,
-    port: 8080,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3000/',
-        changeOrigin: true
-      }
-    }
-  },
-  outputDir: 'dist',
+  outputDir: 'build',
   publicPath: '/Art'
 }
