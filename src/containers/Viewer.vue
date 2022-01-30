@@ -4,11 +4,13 @@
       <img :src="values.src" />
     </div>
     <nav v-if="values">
-      <p>{{ d(values.image.from, 'long') }}</p>
+      <p>{{ values.date }}</p>
       <span />
-      <p>{{ moment(values.image.from).fromNow() }}</p>
+      <p>{{ values.fromNow }}</p>
       <span />
-      <p>{{ getDuration(values.image) }}</p>
+      <p>{{ values.duration }}</p>
+      <span />
+      <p>{{ values.size }}</p>
     </nav>
   </div>
 </template>
@@ -29,8 +31,11 @@ const values = computed(() => {
       for (let j = 0; j < fullData.value[i].images.length; ++j) {
         if (fullData.value[i].images[j].id == route.query.id) {
           return {
-            image: fullData.value[i].images[j],
-            src: `${window.location.pathname}/files/${fullData.value[i].date}/${route.query.id}.jpg`
+            src: `${window.location.pathname}/files/${fullData.value[i].date}/${route.query.id}.${fullData.value[i].images[j].type}`,
+            date: d(fullData.value[i].images[j].from, 'long'),
+            fromNow: moment(fullData.value[i].images[j].from).fromNow(),
+            duration: getDuration(fullData.value[i].images[j]),
+            size: `${fullData.value[i].images[j].width}x${fullData.value[i].images[j].height}`
           }
         }
       }

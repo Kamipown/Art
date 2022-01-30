@@ -31,7 +31,7 @@ const items = computed(() => {
         currentDate = image.from.substring(0, 10)
         image.printDate = true
       }
-      image.src = `${window.location.pathname}/files/${data.value.date}/${image.id}.jpg`
+      image.src = `${window.location.pathname}/files/${data.value.date}/${image.id}.${image.type}`
       ret.push(image)
     }
   }
